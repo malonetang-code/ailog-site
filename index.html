@@ -10,7 +10,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.8;
             color: #333;
-            max-width: 800px;
+            max-width: 860px;
             margin: 0 auto;
             padding: 40px 20px;
             background: #fafafa;
@@ -18,67 +18,91 @@
         h1 { font-size: 28px; margin-bottom: 8px; color: #1a1a1a; }
         .subtitle { color: #666; font-size: 14px; margin-bottom: 40px; }
         h2 { font-size: 20px; margin: 32px 0 12px; color: #1a1a1a; }
+        h3 { font-size: 16px; margin: 20px 0 8px; color: #1a1a1a; }
         p { margin-bottom: 16px; }
         ul { margin: 8px 0 16px 24px; }
         li { margin-bottom: 6px; }
         .highlight { background: #e8f5e9; padding: 16px; border-radius: 8px; margin: 16px 0; }
+        .note { background: #fff; border: 1px solid #eee; padding: 16px; border-radius: 8px; margin: 16px 0; }
         .contact { background: #f5f5f5; padding: 20px; border-radius: 8px; margin-top: 40px; }
         a { color: #4CAF50; }
     </style>
 </head>
 <body>
     <h1>AiLog · AI识食 隐私政策</h1>
-    <p class="subtitle">最后更新：2026年4月28日</p>
+    <p class="subtitle">最后更新：2026年5月8日</p>
 
     <div class="highlight">
-        <strong>核心承诺：</strong>AiLog 不收集、不存储、不出售您的任何个人数据。您的饮食记录和健康数据完全存储在您的设备本地。
+        <strong>核心承诺：</strong>AiLog 不出售您的个人数据，不使用广告 SDK，不做跨 App 或跨网站追踪。饮食记录、运动记录、收藏和个人资料默认保存在您的设备本地。只有当您主动使用 AI 识别、AI 搜索、AI 营养建议、条形码查询、Apple 登录或内购功能时，完成该功能所必需的数据才会发送给对应服务处理。
     </div>
 
-    <h2>1. 我们收集什么数据</h2>
-    <p><strong>简短回答：几乎不收集。</strong></p>
+    <h2>1. 我们处理哪些数据</h2>
     <ul>
-        <li><strong>饮食和运动记录：</strong>全部存储在您的 iPhone 本地（SwiftData），不上传到任何服务器。</li>
-        <li><strong>照片：</strong>仅在您主动拍照识别食物时，照片会发送到 AI 服务进行分析。分析完成后，服务端不保留您的照片。缩略图保存在您的设备本地。</li>
-        <li><strong>HealthKit 数据：</strong>仅在您明确授权后，App 会读取 Apple Watch 的运动数据。这些数据不会离开您的设备。</li>
-        <li><strong>兑换码：</strong>兑换码的使用记录仅存储在设备本地。</li>
+        <li><strong>饮食记录：</strong>食物名称、热量、蛋白质、碳水、脂肪、餐别、记录时间、收藏套餐等，用于本地日志、统计和复用。</li>
+        <li><strong>运动记录：</strong>运动名称、时长、估算消耗、导入时间等，用于本地运动日志和热量计算。</li>
+        <li><strong>身体资料：</strong>身高、体重、年龄、性别、活动水平、热量目标，用于估算基础代谢、每日目标和营养建议。</li>
+        <li><strong>照片或视频内容：</strong>仅在您主动拍照识别食物时，照片会发送给 AI 服务分析；识别结果和缩略图保存在设备本地。</li>
+        <li><strong>搜索文本与 AI 上下文：</strong>使用 AI 食物搜索、AI 运动搜索或 AI 营养建议时，您输入的文本及生成结果所需的少量上下文会发送给 AI 服务。</li>
+        <li><strong>条形码 / 二维码内容：</strong>扫码或手动输入条形码时，条码数字会发送给食品数据库查询公开营养信息。</li>
+        <li><strong>HealthKit 数据：</strong>仅在您授权后读取 Apple 健康中的运动记录和活动能量，用于导入本地运动日志。AiLog 不写入或修改 HealthKit 数据。</li>
+        <li><strong>Apple 登录与购买信息：</strong>用于账号识别、订阅、消耗型内购、恢复购买和权益判断，相关处理由 Apple StoreKit / Sign in with Apple 完成。</li>
+        <li><strong>本地额度和兑换记录：</strong>免费次数、兑换码状态、已处理交易标识等，用于提供 App 功能和防止重复发放权益。</li>
     </ul>
 
-    <h2>2. AI 食物识别</h2>
-    <p>当您使用拍照识别功能时，食物照片会发送到阿里云百炼（DashScope）的 Qwen-VL 视觉模型进行分析。</p>
+    <h2>2. 数据如何存储</h2>
+    <p>饮食记录、运动记录、个人资料、收藏、缩略图和使用额度主要使用 Apple 的本地存储能力保存在您的设备上。我们目前不运营用于保存用户饮食或健康数据的自有服务器。</p>
+    <p>如果您卸载 App，本地数据会随 App 删除。请在卸载前确认是否需要保留记录。</p>
+
+    <h2>3. AI 功能与第三方处理</h2>
+    <p>当您主动使用 AI 功能时，相关内容会发送给阿里云百炼 DashScope，用于生成识别或搜索结果：</p>
     <ul>
-        <li>照片仅用于实时分析，分析后即丢弃</li>
-        <li>我们不会将照片用于模型训练</li>
-        <li>阿里云百炼的隐私政策请参阅：<a href="https://dashscope.aliyun.com" target="_blank">dashscope.aliyun.com</a></li>
+        <li>AI 拍照识别：上传您选择或拍摄的食物照片。</li>
+        <li>AI 食物 / 运动搜索：上传您输入的搜索词。</li>
+        <li>AI 营养建议：上传生成建议所需的身体资料和近期饮食、运动摘要。</li>
     </ul>
+    <p>我们不会将您的数据出售给第三方，也不会把这些数据用于广告追踪。第三方服务对数据的处理还受其自身服务条款和隐私政策约束。</p>
 
-    <h2>3. 数据存储</h2>
-    <p>所有用户数据（饮食记录、运动记录、个人资料、收藏）均使用 Apple 的 SwiftData 框架存储在您的设备本地。我们不运营任何用户数据服务器。</p>
-
-    <h2>4. 第三方服务</h2>
+    <h2>4. 第三方服务清单</h2>
     <ul>
-        <li><strong>阿里云百炼（DashScope）：</strong>用于 AI 食物识别和营养查询</li>
-        <li><strong>Apple StoreKit：</strong>用于应用内购买处理</li>
-        <li><strong>Apple HealthKit：</strong>用于读取运动数据（仅在用户授权后）</li>
+        <li><strong>阿里云百炼（DashScope）：</strong>用于 AI 食物识别、AI 食物/运动搜索和 AI 营养建议。</li>
+        <li><strong>Open Food Facts：</strong>用于条形码食品查询，会接收您扫描或输入的条形码。</li>
+        <li><strong>Apple HealthKit：</strong>用于读取运动数据，仅在用户授权后启用。</li>
+        <li><strong>Sign in with Apple：</strong>用于登录和账号识别。</li>
+        <li><strong>Apple StoreKit：</strong>用于应用内购买、订阅状态和恢复购买。</li>
     </ul>
-    <p>我们不使用任何第三方分析、广告或追踪 SDK。</p>
+    <p>AiLog 不使用第三方广告 SDK，不使用跨 App 追踪，不使用第三方行为分析 SDK。</p>
 
-    <h2>5. 儿童隐私</h2>
+    <h2>5. App Store 隐私标签口径</h2>
+    <div class="note">
+        <p><strong>不用于追踪：</strong>AiLog 不将数据用于跨 App 或跨网站追踪。</p>
+        <p><strong>可能与用户关联的数据：</strong>User Content（饮食记录、运动记录、搜索文本、AI 建议上下文）、Photos or Videos（用户主动提交的食物照片）、Health and Fitness（身体资料、HealthKit 运动数据）、Name / User ID（Apple 登录与权益识别）、Purchases（订阅和消耗型内购）。</p>
+        <p><strong>用途：</strong>App Functionality；Apple 登录相关数据还用于 Authentication。</p>
+    </div>
+
+    <h2>6. HealthKit 说明</h2>
+    <p>AiLog 只在您明确授权后读取 HealthKit 中的运动记录和活动能量，用来导入本地运动日志和计算热量消耗。AiLog 不会把 HealthKit 数据用于广告、营销或出售，也不会写入 HealthKit。</p>
+
+    <h2>7. 医疗与营养免责声明</h2>
+    <p>AiLog 提供的卡路里、营养素估算和 AI 建议仅用于饮食记录与一般参考，不构成医疗诊断、治疗、处方或专业营养治疗建议。如果您有疾病、孕期、饮食禁忌或需要临床饮食方案，请咨询合格医生或营养师。</p>
+
+    <h2>8. 儿童隐私</h2>
     <p>AiLog 不面向 13 岁以下儿童。我们不会有意收集儿童的个人信息。</p>
 
-    <h2>6. 数据删除</h2>
-    <p>您可以随时通过以下方式删除数据：</p>
+    <h2>9. 数据删除</h2>
     <ul>
-        <li>在 App 内逐条删除饮食或运动记录</li>
-        <li>卸载 App 将永久删除所有本地数据</li>
+        <li>您可以在 App 内逐条删除饮食或运动记录。</li>
+        <li>您可以删除收藏、套餐和本地记录。</li>
+        <li>卸载 App 会删除保存在设备上的本地数据。</li>
+        <li>如需隐私相关协助，可通过下方邮箱联系我们。</li>
     </ul>
 
-    <h2>7. 隐私政策更新</h2>
-    <p>如果我们更新隐私政策，会在此页面发布新版本。重大变更会通过 App 内通知告知用户。</p>
+    <h2>10. 隐私政策更新</h2>
+    <p>如果我们更新隐私政策，会在此页面发布新版本。重大变更会通过 App 内提示或版本更新说明告知用户。</p>
 
     <div class="contact">
-        <h2>8. 联系我们</h2>
+        <h2>11. 联系我们</h2>
         <p>如果您对隐私政策有任何疑问，请联系：</p>
-        <p>📧 邮箱：<a href="mailto:support@teamstarmfg.com">support@teamstarmfg.com</a></p>
+        <p>📧 邮箱：<a href="mailto:malonetang@gmail.com">malonetang@gmail.com</a></p>
     </div>
 </body>
 </html>
